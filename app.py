@@ -2,7 +2,6 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import Image
-import cv2
 
 # Load the trained model
 model = tf.keras.models.load_model("artifacts/facial_expression_model.h5")
@@ -39,12 +38,8 @@ def display_prediction(prediction):
         st.write(f"{class_names[i]}: {prob:.2f}")
 
 if uploaded_file is not None:
-    # Convert the file to an OpenCV image
-    file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-    opencv_image = cv2.imdecode(file_bytes, 1)
-
     # Display the uploaded image
-    st.image(opencv_image, channels="BGR", caption="Uploaded Image", use_column_width=True)
+    st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
 
     # Preprocess the image and make prediction
     with st.spinner('Processing image...'):
