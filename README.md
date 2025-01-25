@@ -1,5 +1,6 @@
 # Facial Expression Recognition
 
+streamlit: https://facial-expression-recognition.streamlit.app/
 ## Description
 This repository contains a deep learning solution for facial expression recognition using grayscale images of faces. The task is to classify facial expressions into seven categories: Angry, Disgust, Fear, Happy, Neutral, Sad, and Surprise. The dataset consists of 48x48 pixel grayscale images of faces, automatically aligned to occupy the same space in each image.
 
